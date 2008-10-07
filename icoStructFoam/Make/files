@@ -1,0 +1,4 @@
+tractionDisplacement/tractionDisplacementFvPatchVectorField.C
+icoStructFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/icoStructFoam

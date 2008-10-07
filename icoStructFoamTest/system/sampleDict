@@ -1,0 +1,60 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0.2                                 |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+// FoamX Case Dictionary.
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/home/Panara/OpenFOAM/panara-1.0.2/run";
+    case            "Channel_1s";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          sampleDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+arguments       "/home/Panara/OpenFOAM/panara-1.0.2/run" off;
+
+// Sampling interpolation scheme
+interpolationScheme cellPointFace;
+
+// Output format of data
+writeFormat     raw;
+
+// List of sampling sets
+sampleSets      
+(
+    uniform 
+    {
+        // Name of sampling set
+        name             T2;
+        // Form of distance data
+        axis             y;
+        // Start point on sampling line
+        start           (0  0.01  0);
+        // End point on sampling line
+        end             (0  0.02  0);
+        // Number of points on sampling line
+        nPoints         100;
+    }
+);
+
+// List of fields to be sampled
+fields          
+(
+ T
+);
+
+
+// ************************************************************************* //

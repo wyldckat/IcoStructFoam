@@ -1,0 +1,97 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0.2                                 |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+// FoamX Case Dictionary.
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/home/Panara/OpenFOAM/panara-1.0.2/run";
+    case            "Channel_1s";
+    instance        "constant/polyMesh";
+    local           "";
+
+    class           dictionary;
+    object          blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+arguments       "/home/Panara/OpenFOAM/panara-1.0.2/run/Channel_1s";
+
+// convertToMeters
+convertToMeters 1;
+
+// list of coordinates of block vertices
+vertices        
+(
+    (0 0.01 0)
+    (0.03 0.01 0)
+    (0.03 0.015 0)
+    (0 0.015 0)
+    (0 0.01 0.001)
+    (0.03 0.01 0.001)
+    (0.03 0.015 0.001)
+    (0 0.015 0.001)
+    (0 0.02 0)
+    (0.03 0.02 0)
+    (0.03 0.02 0.001)
+    (0 0.02 0.001)
+);
+
+// list of block descriptions
+blocks          
+(
+    hex (0 1 2 3 4 5 6 7) (60 20 1) simpleGrading (1 1 1)
+    hex (3 2 9 8 7 6 10 11) (60 20 1) simpleGrading (1 1 1)
+);
+
+// list of curved edge descriptions
+edges           
+(
+);
+
+// list of patch descriptions
+patches         
+(
+    wall bottom
+    (
+        (0 1 5 4)
+    )
+    wall top
+    (
+        (8 11 10 9)
+    )
+    empty frontAndBack
+    (
+        (0 3 2 1)
+        (4 5 6 7)
+        (3 8 9 2)
+        (6 10 11 7)
+    )
+    patch inlet
+    (
+        (0 4 7 3)
+        (8 3 7 11)
+    )
+    patch outlet 
+    (
+        (2 6 5 1)
+        (2 9 10 6)
+    )
+);
+
+// list of master-slave patch pairs to be merged
+mergePatchPairs 
+(
+);
+
+
+// ************************************************************************* //

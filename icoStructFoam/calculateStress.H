@@ -1,0 +1,40 @@
+//  ICE Revision: $Id: /local/openfoam/branches/WikiVersions/FluidStructCoupling/icoStructFoam/calculateStress.H 1893 2007-08-27T16:18:53.661162Z bgschaid  $ 
+    if (runTime.outputTime())
+    {
+        volSymmTensorField sigma
+        (
+            IOobject
+            (
+                "sigma",
+                runTime.timeName(),
+                mesh2,
+                IOobject::NO_READ,
+                IOobject::AUTO_WRITE
+            ),
+            rho*sigmaD
+        );
+
+        if (thermalStress)
+        {
+            const volScalarField& T = Tptr();
+            sigma = sigma - I*(rho*threeKalpha*T);
+        }
+
+        volScalarField sigmaEq
+        (
+            IOobject
+            (
+                "sigmaEq",
+                runTime.timeName(),
+                mesh2,
+                IOobject::NO_READ,
+                IOobject::AUTO_WRITE
+            ),
+            sqrt((3.0/2.0)*magSqr(dev(sigma)))
+        );
+
+        Info<< "Max sigmaEq = " << max(sigmaEq).value()
+            << endl;
+
+        runTime.write();
+    }

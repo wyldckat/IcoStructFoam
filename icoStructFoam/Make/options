@@ -1,0 +1,16 @@
+EXE_INC = \
+    -I$(LIB_SRC)/dynamicMesh/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    $(WM_DECOMP_INC) \
+    -I$(LIB_SRC)/cfdTools/incompressible \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/finiteElement/lnInclude \
+    -I$(LIB_SRC)/dynamicMesh/motionSolver 
+
+EXE_LIBS = \
+    -ldynamicMesh \
+    -lmeshTools \
+    $(WM_DECOMP_LIBS) \
+    -lfiniteVolume \
+    -ltriSurface 
+  
