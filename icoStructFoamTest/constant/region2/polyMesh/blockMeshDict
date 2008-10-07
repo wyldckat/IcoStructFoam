@@ -65,7 +65,7 @@ patches
     (
         (0 1 5 4)
     )
-    wall top
+    symmetryPlane top
     (
         (8 11 10 9)
     )
