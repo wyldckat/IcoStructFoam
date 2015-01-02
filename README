@@ -12,25 +12,25 @@ Bernhard Gschaider (bgschaid@ice-sf.at)
 
 Current Maintainer
 ==================
-Bernhard Gschaider (bgschaid@ice-sf.at)
+Bruno Santos (wyldckat@github)
+Applicable only for the repository at https://github.com/wyldckat/IcoStructFoam.git
 
 Documentation
 =============
 See: http://openfoamwiki.net/index.php/Contrib_icoStructFoam
 
+Note: Keep in mind that this is mostly only a proof of concept!!
+
 Required OpenFOAM-Version (Known to work with)
 ==============================================
-1.5
-Unchanged to the 1.4.1-version, so it should work with that
-(a version for 1.3 can be download from the Wiki-page)
-Propably won't compile with 1.4
+2.3
 
 Directory Contents
 ==================
 icoStructFoam    : the solver itself
 icoStructFoamTest: A simple channel that is deformed by the pressure of 
-		   the fluid
+                   the fluid
 thingOnStick     : A deformable solid is fixed on an undeformable solid 
-		   and deformed by the passing fluid
-runAnIcoStructCase.sh: Small shell-script that prepares and runs an example
-		       case using the PyFoam-Utilities
+                   and deformed by the passing fluid
+Allrun           : small shell-script present in the example case folders
+                   that can easily run the necessary steps.
