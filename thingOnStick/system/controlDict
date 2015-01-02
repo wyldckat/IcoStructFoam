@@ -22,7 +22,7 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-applicationClass laplacianFoam;
+application     icoStructFoam;
 
 startFrom       startTime;
 

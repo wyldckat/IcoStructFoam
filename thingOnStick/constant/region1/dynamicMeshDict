@@ -40,7 +40,10 @@ motionSolverLibs ("libfvMotionSolvers.so");
 
 solver displacementSBRStress;
 
-diffusivity  uniform;
+displacementSBRStressCoeffs
+{
+  diffusivity  uniform;
+}
 
 
 // ************************************************************************* //

@@ -1,0 +1,18 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application directory
+application=`getApplication`
+
+runApplication blockMesh -region region1
+mv log.blockMesh log.blockMesh.region1
+
+runApplication blockMesh -region region2
+mv log.blockMesh log.blockMesh.region2
+
+runApplication $application
+
+# ----------------------------------------------------------------- end-of-file

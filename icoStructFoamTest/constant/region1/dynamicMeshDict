@@ -40,7 +40,11 @@ motionSolverLibs ("libfvMotionSolvers.so");
 
 solver displacementLaplacian;
 
-diffusivity  uniform;
+displacementLaplacianCoeffs
+{
+  diffusivity  uniform;
+ 
+}
 
 
 // ************************************************************************* //
